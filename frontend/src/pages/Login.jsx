@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { API_URL } from "../config";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ export default function Login() {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/login", loginData);
+      const res = await axios.post(`${API_URL}/login`, loginData);
 
       // ✅ success
       toast.success("Login successful ✅");

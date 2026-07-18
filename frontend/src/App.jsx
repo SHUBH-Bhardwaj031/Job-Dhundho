@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { API_URL } from "./config";
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -7,7 +8,7 @@ function App() {
 
   const fetchJobs = async () => {
     const res = await axios.get(
-      `http://localhost:5000/jobs?search=${search}`
+      `${API_URL}/jobs?search=${search}`
     );
     setJobs(res.data);
   };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {toast} from "react-toastify"
 import axios from "axios";
+import { API_URL } from "../config";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function Signup() {
   }
 
   try {
-    const res = await axios.post("http://localhost:5000/signup", {
+    const res = await axios.post(`${API_URL}/signup`, {
       name,
       email,
       password,

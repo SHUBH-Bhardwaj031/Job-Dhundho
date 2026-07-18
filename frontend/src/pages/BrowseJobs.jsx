@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Header from "../components/Header";
 import JobCard from "../components/JobCard";
+import { API_URL } from "../config";
 
 export default function BrowseJobs() {
   const [jobs, setJobs] = useState([]);
@@ -20,7 +21,7 @@ export default function BrowseJobs() {
         setHasSearched(true); 
 
       const res = await axios.get(
-        `http://localhost:5000/jobs?search=${search}`
+        `${API_URL}/jobs?search=${search}`
       );
 
       setJobs(res.data);
