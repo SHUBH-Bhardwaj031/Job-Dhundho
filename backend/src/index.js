@@ -4,8 +4,11 @@ import cors from "cors";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
+import dns from "dns";              // 👈 ye line add karo
 
 dotenv.config();
+
+dns.setServers(["8.8.8.8", "8.8.4.4"]);   // 👈 ye line add karo
 
 const app = express();
 
